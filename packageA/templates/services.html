@@ -1,0 +1,15 @@
+{% extends "layout.html"%}
+{% block content%}
+
+    <div class="centerServices">
+        <div class="puchUp">
+            <a href="{{url_for('pushUp')}}"><img  src="https://barbend.com/wp-content/uploads/2023/06/100-push-ups-a-day-featured-image-barbend.com_.jpg" alt="Avatar" style="width:100%"></a>
+            <b>Puch-up</b>
+        </div>
+        <div class="bicepCurl">
+            <a href="{{url_for('bicepcurl')}}"><img  src="https://steelsupplements.com/cdn/shop/articles/shutterstock_657941434_376ae0c9-1a39-42d3-bc39-3eaf18d5038f_1000x.jpg?v=1641548776" alt="Avatar" style="width:100%"></a>
+            <b>Biceps curl</b>
+        </div>
+    </div>
+
+{% endblock content%}

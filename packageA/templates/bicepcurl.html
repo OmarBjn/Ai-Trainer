@@ -1,0 +1,88 @@
+{% extends "layout.html"%}
+{% block content%}
+<div class="container_ser">
+    <div class="ov">
+        <b class="disc">Workout tutorial</b><br>
+    </div>
+    <div class="tutorial">
+        <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/Y2kAgs2GJzY?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=Y2kAgs2GJzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media" allowfullscreen">
+        </iframe>
+    </div>
+    <br>
+    <b class="disc"> AI form check</b>
+    <br>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="fileInput">
+            <i class="fa-solid fa-circle-arrow-up"></i> Upload video
+            <input type="file" id="fileInput" accept="video/*" style="display: none;">
+        </label>
+        <button type="submit" class="upload">Submit</button>
+    </form>
+    <div class="note">
+        <b>Note: Camera angle should be as it is in the tutorial</b>
+
+    </div>
+    <div id="processingMessage" style="display: none;">
+        <p>Processing video... Please wait.</p>
+    </div>
+
+    <div id="videoContainer" style="display: none;" class="feedback">
+        <video id="processedVideo" controls width="100%" height="100%">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var allowedExtensions = ['mp4', 'avi', 'mov', 'mkv', 'wmv'];
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+
+            // Check if the file extension is allowed
+            if (!allowedExtensions.includes(fileExtension)) {
+                alert('Invalid file format. Please upload a video file (MP4, AVI, MOV, MKV, WMV).');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            // Display processing message
+            var processingMessage = document.getElementById('processingMessage');
+            processingMessage.style.display = 'block';
+
+            fetch('/processBicepcurlVideo', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(blob => {
+                    var videoContainer = document.getElementById('videoContainer');
+                    var processedVideo = document.getElementById('processedVideo');
+                    var videoUrl = URL.createObjectURL(blob);
+                    processedVideo.src = videoUrl;
+                    videoContainer.style.display = 'block';
+                    processedVideo.load();
+
+                    // Hide processing message
+                    processingMessage.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Hide processing message in case of error
+                    processingMessage.style.display = 'none';
+                });
+        });
+    </script>
+
+</div>
+{% endblock content%}

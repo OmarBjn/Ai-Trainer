@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+{% block content%}
+
+<div class="container">
+    <form action="" method="POST">
+        {{ form.hidden_tag()}}
+
+        <h1>Login</h1>
+        <!-- for email -->
+        <div class="input-box">
+            {{ form.email.label(class='titleN')}}
+            {% if form.email.errors%}
+            {{ form.email(class='form-control form-control-lg is-invalid')}}
+
+            <div class="titleN">
+                {% for error in form.email.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+            </div>
+
+            {% else %}
+            {{ form.email(class='form-control form-control-lg')}}
+            {% endif %}
+
+        </div>
+        <!-- for password -->
+        <div class="input-box">
+            {{ form.password.label(class='titleN')}}
+            {{ form.password}}
+        </div>
+
+        {{ form.submit(class='btns')}}
+    </form>
+
+    
+    <div class="register">
+        <p>Don't have an account? <a href="{{url_for('register')}}"> Register</a></p>
+    </div>
+</div>
+
+
+{% endblock content%}

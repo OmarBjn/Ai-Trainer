@@ -1,0 +1,471 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+nav{
+    position: fixed;
+    background: black;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 12;
+}
+
+nav .menu{
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.menu .logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.menu .logo a span{
+    color: red;
+}
+
+.menu ul{
+    display: inline-flex;
+}
+.menu ul li{
+    list-style: none;
+    margin-left: 7px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: rgb(0, 0, 0);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    
+
+}
+
+.menu ul li a:hover{
+    background: rgb(255, 255, 255);
+    color: #000;
+
+}
+
+.img{
+    background: url(https://img.freepik.com/premium-photo/contemporary-spotless-fitness-gym-center-interiorgenerative-ai_391052-10889.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais) no-repeat;;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.img::before{
+    content:'';
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.titleN{
+    position: absolute;
+    padding: 0 20px;
+    text-align: left;
+    font-size: 18px;
+    font-family:   monospace;
+    color: #fff;
+}
+
+.note{
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+    margin: 10px 0;
+    transform: translate(25%,0%);
+    text-decoration: underline;
+    font-weight: bold;
+    
+    
+}
+
+.custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:   monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px
+    
+}
+
+.centerServices{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px
+}
+
+.centerServices .title{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:   monospace;
+}
+.centerServices .btns{
+    margin-top: 20px;
+}
+.centerServices .btns button{
+    height: 55px;
+    width: 170px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    border: 2px solid rgb(255, 0, 0);
+    
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.centerServices .btns button:first-child{
+    color: #fff;
+    background: none;
+}
+.centerServices .btns button:first-child:hover{
+    background: white;
+    color: #000;
+
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:   monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    
+
+}
+
+.container h1{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.container .input-box{
+    
+    width: 100%;
+    height: 50px;
+    margin: 40px 0;
+
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border-color: red;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    
+
+}
+.input-box input::placeholder{
+    color: #fff;
+}
+
+.input-box i{
+    position: relative;
+    right: -120px;
+    top: -110%;
+    transform: translateY(-50%);
+    font-size: 20px;
+
+}
+
+.container .btns{
+    height: 55px;
+    width: 50%;
+    border-radius: 30px;
+    border: none;
+    margin: 0 10px;
+    border: 2px solid rgb(255, 0, 0);
+    background: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    
+}
+
+.container .register{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register p a {
+    color: rgb(228, 1, 1);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0 20px;
+
+
+}
+
+.dropdown a{
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+    
+}
+
+.dropdown .drop-content{
+    position: absolute;
+    background-color: #fff;
+    border: 1.5px solid rgb(255, 0, 0);
+    border-radius: 5%;
+    min-width: 100px;
+    display: none;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+
+}
+.dropdown:hover .drop-content{
+    display: block;
+
+}
+
+.dropdown a:hover{
+    background-color: rgb(206, 205, 205);
+    text-decoration: underline;
+}
+
+.centerServices .puchUp {
+    padding: 10px;
+    width: 325px;
+    height: 100px;
+    
+
+}
+
+.centerServices .bicepCurl  {
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    
+
+    color: rgba(255, 255, 255, 0.884);
+
+    
+}
+
+.centerServices .bicepCurl img:hover{
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+    width: 450px;
+    opacity: 1;
+    transition: .4s;
+    
+
+}
+ .puchUp img:hover{
+    box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+    transition: .4s;
+    opacity: 1;
+    
+
+}
+
+.centerServices .puchUp b{
+  background-color: none;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.884);
+  
+}
+
+.centerServices .bicepCurl b{
+    background-color: none;
+    font-size: 25px;
+  }
+
+
+.upload{
+    height: 55px;
+    width: 50%;
+    border-radius: 30px;
+    border: none;
+    margin:  10px 0;
+    border: 2px solid rgb(255, 0, 0);
+    background: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    
+}
+
+.container iframe{
+    margin:  10px 0;
+
+}
+.container .disc{
+    text-align: left;
+    font-size: 40px;
+    justify-content: space-between;
+}
+.container .ov{
+    
+    display: inline;
+    margin-top: 0;
+    justify-content: space-between;
+    
+    
+}
+
+input[type="file"]{
+    display: none;
+}
+
+label{
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c0392b;
+    text-align: center;
+    padding: 15px 40px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Poppins', ;
+    border-radius: 30px;
+    
+
+}
+label:active{
+    transform: scale(0.9);
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:   monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px
+    
+}
+
+.tutorial{
+    width: 1000px;
+    height: 500px;
+    background: #c0392b;
+    transform: translate(8%,0%);
+    border: 1.5px solid rgb(255, 255, 255);
+
+}
+.feedback{
+    height: 500px;
+    width: 1000px;
+    background: #000000;
+    border: 1.5px solid rgb(255, 255, 255);
+    text-align: center;
+    transform: translate(8%,0%);
+}
+
+.container_ser{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    margin-top: 250px;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:   monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    
+
+}
+
+.img_ser{
+    background: url(https://img.freepik.com/premium-photo/contemporary-spotless-fitness-gym-center-interiorgenerative-ai_391052-10889.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais) no-repeat;;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+}
